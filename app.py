@@ -39,20 +39,3 @@ if __name__ == "__main__":
     # debug=True permite reinicio automático ante cambios
     aplicacion.run(host="0.0.0.0", port=5000, debug=True)
 
-from flask import Flask, render_template
-from rutas_clientes import rutas_clientes  # asegúrate de que el archivo se llama igual
-
-# Crear la instancia de Flask
-aplicacion = Flask(__name__)
-
-# Registrar el Blueprint de clientes
-aplicacion.register_blueprint(rutas_clientes)
-
-# Ruta principal (index)
-@aplicacion.route("/")
-def inicio():
-    return render_template("index.html")
-
-# Ejecutar la app
-if __name__ == "__main__":
-    aplicacion.run(debug=True)
