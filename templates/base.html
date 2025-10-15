@@ -2,35 +2,33 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block titulo_pagina %}Proyecto Flask con Jinja2{% endblock %}</title>
+    <!-- Cargar el archivo de estilos -->
     <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
 </head>
 <body>
-<header>
-    <nav>
-        <ul class="menu">
-            <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
-            <li><a href="{{ url_for('acerca') }}">Acerca</a></li>
-            <li><a href="{{ url_for('vista_productos') }}">Productos</a></li>
-            <li><a href="{{ url_for('vista_clientes') }}">Clientes</a></li>
-            <li><a href="{{ url_for('vista_empresas') }}">Empresas</a></li>
-            <li><a href="{{ url_for('vista_personas') }}">Personas</a></li>
-            <li><a href="{{ url_for('vista_vendedores') }}">Vendedores</a></li>
-            <li><a href="{{ url_for('vista_facturas') }}">Facturas</a></li>
-        </ul>
-    </nav>
-</header>
+    <!-- Menú de navegación principal -->
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+                <li><a href="{{ url_for('acerca') }}">Acerca</a></li>
+                <li><a href="{{ url_for('rutas_productos.productos') }}">Productos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-    <h1>{% block encabezado %}{% endblock %}</h1>
-    <section>
-        {% block contenido %}{% endblock %}
-    </section>
-</main>
+    <!-- Contenido principal -->
+    <main>
+        <h1>{% block encabezado %}{% endblock %}</h1>
+        <section>
+            {% block contenido %}{% endblock %}
+        </section>
+    </main>
 
-<footer>
-    <p>Proyecto Flask con Jinja2 - © 2025</p>
-</footer>
+    <!-- Pie de página -->
+    <footer>
+        <p>Proyecto Flask con Jinja2 - © 2025</p>
+    </footer>
 </body>
 </html>
