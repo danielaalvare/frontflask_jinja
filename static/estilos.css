@@ -1,18 +1,20 @@
+estilos.css:
+
 /* ------------------------------
    Estilos generales del sitio
 --------------------------------*/
 html, body {
-    height: 100%;              /* Forzar que ocupen toda la altura */
+    height: 100%;
     margin: 0;
     display: flex;
-    flex-direction: column;    /* Header - Main - Footer en columna */
+    flex-direction: column;
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
 }
 
 /* ------------------------------
-   Estilos del encabezado y menú
+   Encabezado y menú
 --------------------------------*/
 header {
     background-color: #2c3e50;
@@ -39,14 +41,14 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #1abc9c; /* Verde azulado al pasar el ratón */
+    color: #1abc9c;
 }
 
 /* ------------------------------
-   Estilos de la sección principal
+   Contenido principal
 --------------------------------*/
 main {
-    flex: 1;                   /* Ocupa todo el espacio disponible */
+    flex: 1;
     padding: 20px;
     text-align: center;
 }
@@ -60,15 +62,54 @@ h1 {
 }
 
 /* ------------------------------
-   Estilos del pie de página
+   Formularios y tablas
+--------------------------------*/
+form {
+    margin: 10px auto;
+    display: inline-block;
+}
+
+form input, form button {
+    padding: 5px;
+    margin: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #2c3e50;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #1abc9c;
+}
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+    background: white;
+}
+
+table th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+table td, table th {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+/* ------------------------------
+   Pie de página
 --------------------------------*/
 footer {
     background-color: #2c3e50;
     color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: auto;          /* Empuja el footer al fondo */
+    margin-top: auto;
 }
-
-
-
