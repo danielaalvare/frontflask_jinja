@@ -5,7 +5,7 @@ from flask import Flask, render_template
 from rutas_productos import rutas_productos
 
 # Crear la instancia de la aplicación Flask
-aplicacion = Flask(_name_)
+aplicacion = Flask(__name__)
 
 # ------------------- Registro de Blueprints -------------------
 # Registrar el Blueprint de productos en la aplicación principal
@@ -33,8 +33,26 @@ def acerca():
 # ---------------------------------------------------------
 
 # Punto de entrada de la aplicación
-if _name_ == "_main_":
+if __name__ == "__main__":
     # Ejecutar la aplicación en modo depuración, en el puerto 5000
     # host="0.0.0.0" permite que la app sea accesible desde la red local
     # debug=True permite reinicio automático ante cambios
     aplicacion.run(host="0.0.0.0", port=5000, debug=True)
+
+from flask import Flask, render_template
+from rutas_clientes import rutas_clientes  # asegúrate de que el archivo se llama igual
+
+# Crear la instancia de Flask
+aplicacion = Flask(__name__)
+
+# Registrar el Blueprint de clientes
+aplicacion.register_blueprint(rutas_clientes)
+
+# Ruta principal (index)
+@aplicacion.route("/")
+def inicio():
+    return render_template("index.html")
+
+# Ejecutar la app
+if __name__ == "__main__":
+    aplicacion.run(debug=True)
